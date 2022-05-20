@@ -1,0 +1,379 @@
+@font-face {
+    font-family: 'Mario' ;
+    src: url(/_Desafio-portfólio/fonts/SuperMario256.ttf);
+}
+body{
+    font-family: 'Mario', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+    
+}
+
+/*HEADER*/
+
+.header-wrapper{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(-45deg, #386877,#84a6b4, #ffffff);
+    background-size: 500% 500%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    animation: bgTransition 5s ease-in-out infinite;
+}
+
+h1 > span{
+    text-shadow: 0.2rem 0.2rem #000;
+    font-size: 100px;
+    padding: 0;
+    margin: 0px 2px;
+}
+h1{
+    margin-bottom: 50px;
+}
+.header h2{
+    margin: 5px 0;
+}
+h2 > span{
+    padding: 0;
+    font-size: 50px;
+    letter-spacing: 4px;
+    text-shadow: 0.1rem 0.1rem #000
+}
+
+.infos{
+    font-size: 24px;
+    padding: 1rem 4rem;
+    min-width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+a{
+    text-shadow: 0.1rem 0.1rem #DEC60A;
+    color:#082e80;
+    padding: 5px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    border:  2px solid transparent;
+    border-radius: 5px;
+}
+a:hover{
+    color: #DEC60A;
+    background-color: #0C46BF;
+    border: 2px solid #082e80;
+    border-radius: 5px;
+    text-shadow: none;
+
+}
+
+@keyframes bgTransition {
+    0%{ background-position: 0% 80%}
+    50%{background-position: 80% 100%}
+    100%{background-position: 0% 90%}
+}
+
+/*MENU HAMBURGUER*/
+
+.checkbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox{
+    height: 200px;
+    width: 200px;
+    background-image: url(/_Desafio-portfólio/imagens/nuvem.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: left center ;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+
+}
+
+.checkbox .trace{
+    left: 40%;
+    width: 50px;
+    height: 2px;
+    background-color: #0ab4de;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 5px #000;
+    z-index: 2;
+}
+#toggle{
+    display: none;
+}
+.trace:nth-child(1){
+    
+    top:90px;
+    transform: rotate(0);
+
+}
+.trace:nth-child(2){
+    top:105px;
+    transform: rotate(0);
+    
+}
+.trace:nth-child(3){
+    top:120px;
+    transform: rotate(0);
+    
+}
+
+/*MENU*/
+
+.menu{
+    position: absolute;
+    top: 90px;
+    right: 70px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0vmax #dbcf72;
+    z-index: 1 ;
+    transition: all 1s ease-in-out 0s;
+
+}
+
+.menu-items{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out 0s;
+}
+
+.menu-items ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-items ul li{
+    margin: 10px 0;
+    color: #DEC60A;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+
+}
+
+/*Animação Menu*/
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+    transform: rotate(45deg);
+    background-color: #082e80;
+    top: 105px;
+}
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    background-color: #082e80;
+    top: 105px;
+}
+
+#toggle:checked + .checkbox{
+    background-color: #dbcf72;
+
+
+}
+#toggle:checked ~ .menu{
+    box-shadow: 0px 0px 0px 100vmax #dbcf72;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu-items{
+    visibility: visible;
+    opacity: 1;
+}
+
+/*HOME PAGE CARDS*/
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.card-container{
+    gap: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    }
+
+    a.card{
+        border: none;
+        position: relative;
+        height: 300px;
+        width: 400px;
+        margin: 3rem 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: grayscale(0.5);
+        color:#082e80;
+    cursor: pointer;
+    text-shadow: 0.1rem 0.1rem #DEC60A;
+transition: 0.3s;    
+}
+
+.container .card-container:nth-child(1) > a{
+    background-image: url(/_Desafio-portfólio/imagens/jjumpman-img-card.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 410px 310px;
+    
+}
+.container .card-container:nth-child(2) > a{
+    background-image: url(/_Desafio-portfólio/imagens/shigeru-img-card.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 410px 310px;
+    
+}
+.container .card-container:nth-child(3) > a{
+    background-image: url(/_Desafio-portfólio/imagens/memes-img-card.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 410px 310px;
+    
+}
+
+.card-text{
+    display: flex;
+    width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+.card-wrapper::before{
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 260px;
+    width: 360px;
+    transform: scale(0);
+    display: block;
+    border: 1px solid #fff;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper h2{
+    align-self: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper p{
+    font-size: 0;
+    visibility: visible;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+a.card:hover{
+    filter: unset;
+    border: none;
+}
+
+.card:hover > .card-wrapper::before{
+
+    opacity: 1;
+    height: 260px;
+    width: 90%;
+    transform: scale(1);
+
+}
+.card:hover > .card-wrapper p {
+     font-size: 20px;
+     opacity: 1;
+
+}
+.card:hover > .card-wrapper h2{
+
+}
+/*footer*/
+.footer{
+    color: #DEC60A;
+    text-shadow: 1px 1px solid #000;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #082e80;
+}
+
+@media(max-width:800px){
+.social-media{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    margin-top: 0;
+
+}
+
+.card-container{
+    flex-direction: column;
+}
+
+.card-container:nth-child(1),
+.card-container:nth-child(3){
+flex-direction: column-reverse;
+}
+.card{
+    width: 90%;
+    margin-top: 2rem;
+    text-align: center;
+}
+.card:hover > .card-wrapper::before{
+    width: 90%;
+}
+}
