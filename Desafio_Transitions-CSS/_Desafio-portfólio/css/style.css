@@ -341,7 +341,6 @@ a.card:hover{
 /*footer*/
 .footer{
     color: #DEC60A;
-    text-shadow: 1px 1px solid #000;
     height: 100px;
     width: 100%;
     display: flex;
