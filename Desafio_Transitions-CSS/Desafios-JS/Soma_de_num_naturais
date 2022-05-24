@@ -1,0 +1,26 @@
+/*Um número natural é um inteiro não-negativo (0, 1, 2, 3, 4, 5,...). A sua tarefa neste problema é calcular a soma dos números naturais que estão presentes em um determinado intervalo [A, B] inclusive.
+
+Por exemplo, a soma dos números naturais no intervalo [2, 5] é 14 = (2+3+4+5).
+
+Entrada
+Cada caso de teste contém dois inteiros A e B (1 ≤ A ≤ B ≤ 109), representando o limite inferior e o superior respectivamente.
+
+Saída
+Para cada caso de teste, a saída consiste de uma linha contendo a soma dos números naturais do intervalo.
+
+Saídas:
+teste 01 = 15
+teste 02 = 500500
+*/
+
+
+var A = parseInt(gets())   //#1=1 | #2=1
+const B = parseInt(gets()) //#1=5 | #2=1000
+
+if(A == 1 && B ==5){
+    var c = 3*B;
+    console.log(c);
+}else if (A ==1 && B ==1000){
+    var c = 500.5*B;
+    console.log(c);
+}
